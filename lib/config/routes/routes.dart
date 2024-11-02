@@ -7,7 +7,7 @@ import '../../views/view.dart';
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case RoutesName.SplashScreen:
+      case RoutesName.splashScreen:
         return MaterialPageRoute(builder: (context) => const SplashScreen());
       case RoutesName.homeScreen:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
