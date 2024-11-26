@@ -1,4 +1,5 @@
 import 'package:clean_code_architecture/config/routes/routes_name.dart';
+import 'package:clean_code_architecture/services/splash/splash_services.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -9,16 +10,23 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  SplashServices _splashServices = SplashServices();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _splashServices.isLogin(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, RoutesName.homeScreen);
-            },
-            child: Text("Home Screen")),
-      ),
+          child: Text(
+        "Splash Screen ",
+        style: TextStyle(fontSize: 50),
+      )),
     );
   }
 }
